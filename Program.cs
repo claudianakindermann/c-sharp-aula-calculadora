@@ -7,19 +7,21 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
-            Console.Clear();
-            Console.WriteLine("Digite o primeiro valor: ");
-            float v1 = float.Parse(Console.ReadLine());
-            Console.WriteLine("v1 = " + v1);
-            Console.WriteLine("Digite o segundo valor: ");
-            float v2 = float.Parse(Console.ReadLine());
-            Console.WriteLine("v2 = " + v2);
-            Console.Write("Resultado da soma:" + Soma(v1, v2));
+            Soma();
         }
 
-        private static float Soma(float v1, float v2)
+        static void Soma()
         {
-            return v1 + v2;
+            Console.Clear();
+
+            Console.WriteLine("Digite o primeiro valor: ");
+            float v1 = float.Parse(Console.ReadLine());
+
+            Console.WriteLine("Digite o segundo valor: ");
+            float v2 = float.Parse(Console.ReadLine());
+
+            float resultado = v1 + v2;
+            Console.Write($"O Resultado da soma: {resultado}");
         }
     }
 
