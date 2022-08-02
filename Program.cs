@@ -7,92 +7,105 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("1 - SOMA");
-            Console.WriteLine("2 - Subtração");
-            Console.WriteLine("3 - Multiplicação");
-            Console.WriteLine("4 - Divisão");
-            Console.WriteLine("Selecione a opção desejada:");
-            int opcao = int.Parse(Console.ReadLine());
-
-            switch (opcao)
-            {
-                case 1: Soma(); break;
-                case 2: Subtracao(); break;
-                case 3: Multiplicacao(); break;
-                case 4: Divisao(); break;
-                default: Console.WriteLine("Escolha uma opção de 1 a 4"); break;
-            }
+            Calculate();
         }
 
+        static void Calculate()
+        {
+            int opcao = 0;
+
+            do
+            {
+                Console.Clear();
+                Console.WriteLine("************* CALCULATOR *************");
+                Console.WriteLine("1 - Sum");
+                Console.WriteLine("2 - subtraction");
+                Console.WriteLine("3 - Multiplication");
+                Console.WriteLine("4 - Division");
+                Console.WriteLine("5 - Exit");
+                Console.WriteLine("Choose an option:");
+
+                opcao = int.Parse(Console.ReadLine());
+
+                switch (opcao)
+                {
+                    case 1: Soma(); break;
+                    case 2: Subtracao(); break;
+                    case 3: Multiplicacao(); break;
+                    case 4: Divisao(); break;
+                    case 5: break;
+                    default: Console.WriteLine("Choose an option from 1 to 5!"); break;
+                }
+
+            } while (!(opcao == 5));
+        }
         static void Soma()
 
         {
-            Console.Clear();
 
-            Console.WriteLine("Digite o primeiro valor: ");
+            Console.WriteLine("Enter the first value: ");
             float v1 = float.Parse(Console.ReadLine());
 
-            Console.WriteLine("Digite o segundo valor: ");
+            Console.WriteLine("Enter the second value: ");
             float v2 = float.Parse(Console.ReadLine());
 
             float resultado = v1 + v2;
-            Console.Write($"O Resultado da soma: {resultado}");
+            Console.WriteLine($"Result of sum: {resultado}");
+            Console.Write("Press enter to continue.");
             Console.ReadLine();
         }
         static void Subtracao()
         {
-
-            Console.Clear();
-
-            Console.WriteLine("Digite o primeiro valor: ");
+            Console.WriteLine("Enter the first value: ");
             float v1 = float.Parse(Console.ReadLine());
 
-            Console.WriteLine("Digite o segundo valor: ");
+            Console.WriteLine("Enter the second value: ");
             float v2 = float.Parse(Console.ReadLine());
 
             if (v1 < v2)
             {
-                Console.WriteLine("O primeiro valor deve ser maior ou igual ao segundo valor");
+                Console.WriteLine("The first value must be greater than or equal to the second value!");
             }
             else
             {
                 float resultado = v1 - v2;
-                Console.WriteLine($"Resultado da subtração: {resultado} ");
+                Console.WriteLine($"Result of subtraction: {resultado} ");
             };
-
+            Console.Write("Press enter to continue.");
+            Console.ReadLine();
         }
         static void Multiplicacao()
         {
-            Console.Clear();
-
-            Console.WriteLine("Digite o primeiro valor: ");
+            Console.WriteLine("Enter the first value: ");
             float v1 = float.Parse(Console.ReadLine());
 
-            Console.WriteLine("Digite o segundo valor: ");
+            Console.WriteLine("Enter the second value: ");
             float v2 = float.Parse(Console.ReadLine());
 
             float resultado = v1 * v2;
-            Console.WriteLine("Resultado da multiplicação: " + resultado);
+            Console.WriteLine("Result of multiplication: " + resultado);
+            Console.Write("Press enter to continue.");
+            Console.ReadLine();
         }
         static void Divisao()
         {
-            Console.Clear();
-
-            Console.WriteLine("Digite o primeiro valor: ");
+            Console.WriteLine("Enter the first value: ");
             float v1 = float.Parse(Console.ReadLine());
 
-            Console.WriteLine("Digite o segundo valor: ");
+            Console.WriteLine("Enter the second value: ");
             float v2 = float.Parse(Console.ReadLine());
 
             if (v2 == 0)
             {
-                Console.WriteLine("Não é possível dividir por zero!");
+                Console.WriteLine("Cannot divide by zero!");
             }
             else
             {
                 float resultado = v1 / v2;
-                Console.WriteLine($"Resultado da divisão: {resultado}");
+                Console.WriteLine($"Result of division: {resultado}");
             };
+            Console.Write("Press enter to continue.");
+            Console.ReadLine();
         }
 
     }
