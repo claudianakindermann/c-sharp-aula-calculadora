@@ -7,44 +7,43 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
-            Calculate();
+            Menu();
         }
 
-        static void Calculate()
+        static void Menu()
         {
-            int opcao = 0;
+            string option = "0";
 
-            do
+            Console.Clear();
+            Console.WriteLine("************* CALCULATOR *************");
+            Console.WriteLine("1 - Sum");
+            Console.WriteLine("2 - subtraction");
+            Console.WriteLine("3 - Multiplication");
+            Console.WriteLine("4 - Division");
+            Console.WriteLine("5 - Exit");
+            Console.WriteLine("Choose an option:");
+
+            option = Console.ReadLine();
+
+            switch (option)
             {
-                Console.Clear();
-                Console.WriteLine("************* CALCULATOR *************");
-                Console.WriteLine("1 - Sum");
-                Console.WriteLine("2 - subtraction");
-                Console.WriteLine("3 - Multiplication");
-                Console.WriteLine("4 - Division");
-                Console.WriteLine("5 - Exit");
-                Console.WriteLine("Choose an option:");
+                case "1": Soma(); break;
+                case "2": Subtracao(); break;
+                case "3": Multiplicacao(); break;
+                case "4": Divisao(); break;
+                case "5": System.Environment.Exit(0); break;
+                default: Menu(); break;
+            }
 
-                opcao = int.Parse(Console.ReadLine());
-
-                switch (opcao)
-                {
-                    case 1: Soma(); break;
-                    case 2: Subtracao(); break;
-                    case 3: Multiplicacao(); break;
-                    case 4: Divisao(); break;
-                    case 5: break;
-                    default: Console.WriteLine("Choose an option from 1 to 5!"); break;
-                }
-
-            } while (!(opcao == 5));
         }
         static void Soma()
 
         {
-
+            // while
             Console.WriteLine("Enter the first value: ");
             float v1 = float.Parse(Console.ReadLine());
+            Console.WriteLine(v1.GetType());
+
 
             Console.WriteLine("Enter the second value: ");
             float v2 = float.Parse(Console.ReadLine());
@@ -52,7 +51,8 @@ namespace Calculator
             float resultado = v1 + v2;
             Console.WriteLine($"Result of sum: {resultado}");
             Console.Write("Press enter to continue.");
-            Console.ReadLine();
+            Console.ReadKey();
+            Menu();
         }
         static void Subtracao()
         {
@@ -72,7 +72,8 @@ namespace Calculator
                 Console.WriteLine($"Result of subtraction: {resultado} ");
             };
             Console.Write("Press enter to continue.");
-            Console.ReadLine();
+            Console.ReadKey();
+            Menu();
         }
         static void Multiplicacao()
         {
@@ -82,10 +83,10 @@ namespace Calculator
             Console.WriteLine("Enter the second value: ");
             float v2 = float.Parse(Console.ReadLine());
 
-            float resultado = v1 * v2;
-            Console.WriteLine("Result of multiplication: " + resultado);
+            Console.WriteLine("Result of multiplication: " + (v1 * v2));
             Console.Write("Press enter to continue.");
-            Console.ReadLine();
+            Console.ReadKey();
+            Menu();
         }
         static void Divisao()
         {
@@ -105,7 +106,8 @@ namespace Calculator
                 Console.WriteLine($"Result of division: {resultado}");
             };
             Console.Write("Press enter to continue.");
-            Console.ReadLine();
+            Console.ReadKey();
+            Menu();
         }
 
     }
