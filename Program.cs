@@ -39,8 +39,11 @@ namespace Calculator
         static void Soma()
 
         {
+            // while
             Console.WriteLine("Enter the first value: ");
             float v1 = float.Parse(Console.ReadLine());
+            Console.WriteLine(v1.GetType());
+
 
             Console.WriteLine("Enter the second value: ");
             float v2 = float.Parse(Console.ReadLine());
